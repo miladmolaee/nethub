@@ -1,7 +1,7 @@
 class Multi:
     commands: str
 
-    def set(self, script):
+    def set(self, script, root_path):
         self.commands = script
 
         print(self.commands)

@@ -1,0 +1,35 @@
+#
+run number      :   102
+max epoch       :   2500
+#
+min training accuracy   :   0.99
+min validation accuracy :   0.99
+min test accuracy       :   0.99
+#
+max training loss       :   5e-5
+max validation loss     :   5e-5
+max test loss           :   5e-5
+#
+multi run 		: off
+#
+plot            :   on
+check result    :   off
+sound           :   off
+#
+layer   :   n = 25, activation = tanh
+layer   :   n = 20, activation = exponential
+layer   :   n = 15, activation = tanh
+layer   :   n = 10, activation = exponential
+layer   :   n = 10, activation = relu
+layer   :   n = 15, activation = tanh
+layer   :   n = 5, activation = tanh
+layer   :   n = 2,  activation = linear
+#
+input dimention	:	4
+output dimention:	2
+#
+test split		: 0.15
+validation split	: 0.15
+batch split		: 0.20
+#
+normalization	: [-1,1]

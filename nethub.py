@@ -1,7 +1,7 @@
 # created by miladmolaee@hotmail.com
 from Run.Train.single import Single
 from Run.Train.multi import Multi
-import Prediction.predict
+from Prediction import predict
 
 if __name__ == '__main__':
 
@@ -25,7 +25,7 @@ if __name__ == '__main__':
 
     if command == '1':  # training
 
-        root_dir = input('please enter the address of root directory of your project:\n>>> ')
+        root_dir = input('please enter the address of the directory of your project:\n>>> ')
 
         if not path.exists(root_dir):
             print('Yor entered path is not exists !\nPress ENTER to exit')
@@ -60,16 +60,15 @@ if __name__ == '__main__':
 
         elif _type == 2:
             multi = Multi()
-            multi.set(scripts)
+            multi.set(scripts, root_path=root_dir)
             multi.run()
 
     elif command == '2':  # test
 
-        print('2')
+        print('test is not available now')
 
     elif command == '3':  # prediction
 
-        main_dir = input('please enter the address contain \'my_model_weights.h5\' file:\n>>> ')
+        main_dir = input('please enter the directory address contain \'my_model_weights.h5\' file:\n>>> ')
 
-        Prediction.predict.prediction(main_dir)
-
+        predict.prediction(main_dir)
