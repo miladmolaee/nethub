@@ -104,7 +104,8 @@ class MLP(Net):
         try:
             os.mkdir(os.path.join(parent_directory, 'result'))
         except OSError as error:
-            print(error)
+            pass
+            # print(error)
 
         # set output directory
         parent_dir = self.parent_directory
@@ -119,7 +120,8 @@ class MLP(Net):
         try:
             os.mkdir(path)
         except OSError as error:
-            print(error)
+            pass
+            # print(error)
 
         # set working directory
         self.working_directory = parent_dir + "\\result\\Run No. " + str(self.run_num)
@@ -130,7 +132,8 @@ class MLP(Net):
         try:
             os.mkdir(project_path)
         except OSError as error:
-            print(error)
+            pass
+            # print(error)
 
         self.project_path = self.working_directory + "\\.project"
 
@@ -169,11 +172,14 @@ class MLP(Net):
         try:
             os.mkdir(os.path.join(self.working_directory, '.properties'))
         except OSError as error:
-            print(error)
+            pass
+            # print(error)
+
         try:
             os.mkdir(os.path.join(self.working_directory, '.temp'))
         except OSError as error:
-            print(error)
+            pass
+            # print(error)
 
         # write s and o ------------------------------------------------------------------------------------------------
         file = open(self.working_directory + '\\.properties\\input.properties', 'w')
@@ -211,6 +217,9 @@ class MLP(Net):
                                  kernel_regularizer=kernel_regularizer))
             file.write('Dense Layer - \tType : OUTPUT_LAYER \t - \t neurons : [ ' + str(neuron) +
                        ' ] \t - \t activation function : [ ' + activation_function.name + ' ]\n')
+
+            if neuron != self.output_dimension:
+                raise NameError('The Number of Neurons in Output Layer must be equal to Output Dimension in Raw Data')
 
         # add a hidden layer -------------------------------------------------------------------------------------------
         else:

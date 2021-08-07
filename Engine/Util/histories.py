@@ -62,6 +62,6 @@ class Histories(Callback):
 
     def on_train_end(self, logs=None):
         if self.is_stopped_training:
-            print('>>> # [ Training Finished by ', self.finished_by, ' at __epoch :', self.finished_epoch, ']')
+            print(' # [ Training Finished by ', self.finished_by, ' at __epoch :', self.finished_epoch, ']')
         else:
-            print('>>> # [ Training Finished without acceptable result. ]')
+            print(' # [ Training Finished without acceptable result ]')

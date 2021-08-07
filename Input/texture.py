@@ -9,6 +9,7 @@ class Layer:
 
 
 class Texture:
+
     run_number = 1
     max_epoch = 2500
     min_training_accuracy = 0.9
@@ -17,12 +18,47 @@ class Texture:
     max_training_loss = 5e-5
     max_validation_loss = 5e-5
     max_test_loss = 5e-5
+    input_dimension = 2
+    output_dimension = 1
+    test_split = 0.15
+    validation_split = 0.15
+    batch_split = 0.2
+    normalization_range = [-1, 1]
     multi_run = False
     plot = False
     check_result = False
     sound = False
     layer = []
     layer_dim = 0
+
+    def __init__(self, run_number=1, max_epoch=2500, min_training_accuracy=0.9, min_validation_accuracy=0.9,
+                 min_test_accuracy=0.9, max_training_loss=5e-5, max_validation_loss=5e-5, max_test_loss=5e-5,
+                 input_dimension=2, output_dimension=1, test_split=0.15, validation_split=0.15, batch_split=0.2,
+                 normalization_range=[], multi_run=False, plot=True, check_result=False, sound=True,
+                 layer=[], layer_dim=0):
+
+        if normalization_range is None:
+            normalization_range = [-1, 1]
+        self.run_number = run_number
+        self.max_epoch = max_epoch
+        self.min_training_accuracy = min_training_accuracy
+        self.min_validation_accuracy = min_validation_accuracy
+        self.min_test_accuracy = min_test_accuracy
+        self.max_training_loss = max_training_loss
+        self.max_validation_loss = max_validation_loss
+        self.max_test_loss = max_test_loss
+        self.input_dimension = input_dimension
+        self.output_dimension = output_dimension
+        self.test_split = test_split
+        self.validation_split = validation_split
+        self.batch_split = batch_split
+        self.normalization_range = normalization_range
+        self.multi_run = multi_run
+        self.plot = plot
+        self.check_result = check_result
+        self.sound = sound
+        self.layer = layer
+        self.layer_dim = layer_dim
 
     def make(self, scripts):
 
@@ -76,11 +112,11 @@ class Texture:
             elif scripts[i].__contains__('maxtestloss'):
                 self.max_test_loss = float(separate(scripts[i]))
 
-            elif scripts[i].__contains__('inputdimention'):
-                self.input_dimention = int(separate(scripts[i]))
+            elif scripts[i].__contains__('inputdimension'):
+                self.input_dimension = int(separate(scripts[i]))
 
-            elif scripts[i].__contains__('outputdimention'):
-                self.output_dimention = int(separate(scripts[i]))
+            elif scripts[i].__contains__('outputdimension'):
+                self.output_dimension = int(separate(scripts[i]))
 
             elif scripts[i].__contains__('testsplit'):
                 self.test_split = float(separate(scripts[i]))
@@ -95,7 +131,7 @@ class Texture:
                 self.normalization_range = []
                 temp = ''
                 for s in separate(scripts[i]):
-                    if not(s == '[' or s == ']' or s == ','):
+                    if not (s == '[' or s == ']' or s == ','):
                         temp = temp + s
                     if s == ',':
                         self.normalization_range.append(float(temp))
@@ -136,52 +172,52 @@ class Texture:
                             ast = ''
                             st = ''
 
-                        if st == Net.activations.elu.name:
+                        elif st == Net.activations.elu.name:
                             act_func = Net.activations.elu
                             ast = ''
                             st = ''
 
-                        if st == Net.activations.selu.name:
+                        elif st == Net.activations.selu.name:
                             act_func = Net.activations.selu
                             ast = ''
                             st = ''
 
-                        if st == Net.activations.linear.name:
+                        elif st == Net.activations.linear.name:
                             act_func = Net.activations.linear
                             ast = ''
                             st = ''
 
-                        if st == Net.activations.tanh.name:
+                        elif st == Net.activations.tanh.name:
                             act_func = Net.activations.tanh
                             ast = ''
                             st = ''
 
-                        if st == Net.activations.sigmoid.name:
+                        elif st == Net.activations.sigmoid.name:
                             act_func = Net.activations.sigmoid
                             ast = ''
                             st = ''
 
-                        if st == Net.activations.hard_sigmoid.name:
+                        elif st == Net.activations.hard_sigmoid.name:
                             act_func = Net.activations.hard_sigmoid
                             ast = ''
                             st = ''
 
-                        if st == Net.activations.softmax.name:
+                        elif st == Net.activations.softmax.name:
                             act_func = Net.activations.softmax
                             ast = ''
                             st = ''
 
-                        if st == Net.activations.softsign.name:
+                        elif st == Net.activations.softsign.name:
                             act_func = Net.activations.softsign
                             ast = ''
                             st = ''
 
-                        if st == Net.activations.softplus.name:
+                        elif st == Net.activations.softplus.name:
                             act_func = Net.activations.softplus
                             ast = ''
                             st = ''
 
-                        if st == Net.activations.exponential.name:
+                        elif st == Net.activations.exponential.name:
                             act_func = Net.activations.exponential
                             ast = ''
                             st = ''

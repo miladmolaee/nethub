@@ -38,11 +38,14 @@ class PNormalizer:
         try:
             os.mkdir(os.path.join(self.root_path, '.properties'))
         except OSError as error:
-            print(error)
+            pass
+            # print(error)
+
         try:
             os.mkdir(os.path.join(self.root_path, '.temp'))
         except OSError as error:
-            print(error)
+            pass
+            # print(error)
 
         # write s and o ------------------------------------------------------------------------------------------------
         file = open(self.root_path + '\\.properties\\input_for_prediction.properties', 'w')

@@ -23,7 +23,7 @@ class Single:
 
             data = Data(root_path=self.root_path, file_name='input.xlsx', test_split=texture.test_split,
                         validation_split=texture.validation_split,
-                        input_dim=texture.input_dimention, output_dim=texture.output_dimention)
+                        input_dim=texture.input_dimension, output_dim=texture.output_dimension)
 
             net = MLP(parent_directory=self.root_path, run_num=texture.run_number, multi_run=False, plot=texture.plot,
                       min_accuracy=texture.min_training_accuracy, min_accuracy_v=texture.min_validation_accuracy,
@@ -82,9 +82,9 @@ class Single:
                 if not texture.check_result:
                     net.prediction()
                     wr.write_final_result(net)
-                    print('# result is not acceptable.')
+                    print('>>> # result is not acceptable.')
                     d = input('Dou you want to try again?   \'y\' or \'n\'\n')
                     if not d == 'y':
                         break
                 else:
-                    print('# result is not acceptable. We Must Try Again ...')
+                    print('>>> # result is not acceptable. We Must Try Again ...')

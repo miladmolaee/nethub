@@ -1,5 +1,5 @@
 #
-run number      :   102
+run number      :   100
 max epoch       :   2500
 #
 min training accuracy   :   0.99
@@ -13,8 +13,8 @@ max test loss           :   5e-5
 multi run 		: off
 #
 plot            :   on
-check result    :   off
-sound           :   off
+check result    :   on
+sound           :   on
 #
 layer   :   n = 25, activation = tanh
 layer   :   n = 20, activation = exponential
@@ -25,8 +25,8 @@ layer   :   n = 15, activation = tanh
 layer   :   n = 5, activation = tanh
 layer   :   n = 2,  activation = linear
 #
-input dimention	:	4
-output dimention:	2
+input dimension	:	4
+output dimension:	2
 #
 test split		: 0.15
 validation split	: 0.15
