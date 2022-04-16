@@ -12,11 +12,21 @@ Requirements:
 	
 How to Install:
     
-* install python 3
 * install Anaconda
 * install some packages as:
     
-        pip install tensorflow
-        pip install keras
+        conda create -n tf tensorflow 
+        conda activate tf 
+
+  or
+        conda create -n tf-gpu tensorflow-gpu
+        conda activate tf-gpu
+
+  and
+        conda install -c conda-forge matplotlib
+        conda install -c conda-forge openpyxl
+        conda install -c conda-forge pandas
+        conda install -c conda-forge keras
+
     
 * Enjoy NetHub
