@@ -10,6 +10,7 @@ Requirements:
 * padas
 	
 	
+	
 How to Install:
     
 * install Anaconda
@@ -18,11 +19,11 @@ How to Install:
         conda create -n tf tensorflow 
         conda activate tf 
 
-  or
+
         conda create -n tf-gpu tensorflow-gpu
         conda activate tf-gpu
 
-  and
+
         conda install -c conda-forge matplotlib
         conda install -c conda-forge openpyxl
         conda install -c conda-forge pandas
