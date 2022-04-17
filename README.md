@@ -14,7 +14,7 @@ Requirements:
 How to Install:
     
 * install Anaconda from
-	http://aconda.com/products/individual
+	http://anaconda.com/products/individual
 	
 * install some packages:
     
