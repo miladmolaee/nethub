@@ -14,6 +14,8 @@ Requirements:
 How to Install:
     
 * install Anaconda
+	http://aconda.com/products/individual
+	
 * install some packages as:
     
         conda create -n tf tensorflow 
