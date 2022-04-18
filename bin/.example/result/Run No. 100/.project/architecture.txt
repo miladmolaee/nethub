@@ -1,0 +1,8 @@
+Dense Layer - 	Type : INPUT_LAYER 	 - 	 neurons : [ 25 ] 	 - 	 activation function : [ tanh ]
+Dense Layer - 	Type : HIDDEN_LAYER 	 - 	 neurons : [ 20 ] 	 - 	 activation function : [ exponential ]
+Dense Layer - 	Type : HIDDEN_LAYER 	 - 	 neurons : [ 15 ] 	 - 	 activation function : [ tanh ]
+Dense Layer - 	Type : HIDDEN_LAYER 	 - 	 neurons : [ 10 ] 	 - 	 activation function : [ exponential ]
+Dense Layer - 	Type : HIDDEN_LAYER 	 - 	 neurons : [ 10 ] 	 - 	 activation function : [ relu ]
+Dense Layer - 	Type : HIDDEN_LAYER 	 - 	 neurons : [ 15 ] 	 - 	 activation function : [ tanh ]
+Dense Layer - 	Type : HIDDEN_LAYER 	 - 	 neurons : [ 5 ] 	 - 	 activation function : [ tanh ]
+Dense Layer - 	Type : OUTPUT_LAYER 	 - 	 neurons : [ 2 ] 	 - 	 activation function : [ linear ]

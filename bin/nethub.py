@@ -54,7 +54,10 @@ if __name__ == '__main__':
 
         else:
 
-            if not _f:
+            if _f:
+                root_dir = root_dir[:len(root_dir) - 1]
+            else:
+                root_dir = root_dir[:len(root_dir)]
                 save_ = input('Do you want to save this path as a project directory? \'y\' or \'n\' : ')
                 if save_ == 'y' or save_ == 'yes':
                     name_ = input('Enter a name for this project : ')
@@ -62,7 +65,6 @@ if __name__ == '__main__':
                     file_config.write(name_ + '=' + root_dir + '\n')
                     file_config.close()
 
-            root_dir = root_dir[:len(root_dir) - 1]
             file = open(root_dir + '\\script.sptnet', 'r')
 
         Lines = file.readlines()
