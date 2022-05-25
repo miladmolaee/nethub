@@ -1,9 +1,10 @@
-import pandas
-import numpy
 import math
 
-from Input.Util.normalizer import Normalizer
+import numpy
+import pandas
+
 from Input.Util.generate_random_list import generateList
+from Input.Util.normalizer import Normalizer
 
 
 class Data:

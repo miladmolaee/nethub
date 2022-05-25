@@ -1,5 +1,4 @@
-from tensorflow.keras import optimizers
-from tensorflow.keras import activations
+from tensorflow.keras import activations, optimizers
 
 
 class Net:

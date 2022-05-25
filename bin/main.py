@@ -1,8 +1,8 @@
 # created by miladmolaee@hotmail.com
 
-from Run.Train.single import Single
-from Run.Train.multi import Multi
 from Prediction import predict
+from Run.Train.multi import Multi
+from Run.Train.single import Single
 from Util.info import Info
 
 if __name__ == '__main__':

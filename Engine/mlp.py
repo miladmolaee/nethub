@@ -1,19 +1,16 @@
 import os
 
 import numpy as np
-
 import tensorflow.keras as keras
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
-
 from matplotlib import pyplot as plt
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.models import Sequential
 
-from Engine.network import Net
-from Engine.network import activations
-from Engine.Util.histories import Histories
-from Engine.Util.accuracy import R_squared
-import Engine.Util.accuracy as acc
 import Engine.network as net
+import Engine.Util.accuracy as acc
+from Engine.network import Net, activations
+from Engine.Util.accuracy import R_squared
+from Engine.Util.histories import Histories
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 

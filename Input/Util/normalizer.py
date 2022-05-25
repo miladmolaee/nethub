@@ -1,5 +1,6 @@
-import numpy
 import os
+
+import numpy
 
 
 class Normalizer:

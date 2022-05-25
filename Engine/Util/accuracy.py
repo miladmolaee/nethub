@@ -1,5 +1,5 @@
-from tensorflow.keras import backend
 import numpy
+from tensorflow.keras import backend
 
 
 # define new accuracy : R^2 --------------------------------------------------------------------------------------------

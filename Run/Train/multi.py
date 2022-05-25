@@ -1,10 +1,11 @@
-from Input.multi_texture import Multi_Texture
-from Engine.network import Net
-from Engine.mlp import MLP
-from Input.data import Data
-import Run.Util.write_training_result as wr
-import winsound
 import time
+import winsound
+
+import Run.Util.write_training_result as wr
+from Engine.mlp import MLP
+from Engine.network import Net
+from Input.data import Data
+from Input.multi_texture import Multi_Texture
 
 
 class Multi:

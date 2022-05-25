@@ -1,5 +1,6 @@
+from typing import Any, List
+
 from tensorflow.keras.callbacks import Callback
-from typing import List, Any
 
 
 # History class for managing and saving each Epoch ---------------------------------------------------------------------
