@@ -1,19 +1,22 @@
-# created by miladmolaee@hotmail.com
+# created by Milad Molaee: miladmolaee@hotmail.com  -  May 2019
+#
 
-from Prediction import predict
-from Run.Train.multi import Multi
-from Run.Train.single import Single
-from Util.info import Info
+import sys
+
+sys.path.append('..')
+
+import src.prediction
+from src.run.train.single import Single
+from src.run.train.multi import Multi
+import util
 
 if __name__ == '__main__':
 
-    import sys
-
     print('------------------------------------------------------------------')
     print('|                                                                |')
-    print('|           # enter 1 for Training                               |')
-    print('|           # enter 2 for Test                                   |')
-    print('|           # enter 3 for Prediction                             |')
+    print('|                # enter 1 for Training                          |')
+    print('|                # enter 2 for Test                              |')
+    print('|                # enter 3 for Prediction                        |')
     print('|                                                                |')
     print('------------------------------------------------------------------')
 
@@ -26,18 +29,20 @@ if __name__ == '__main__':
 
     if command == '1':  # training
 
-        root_dir = input(' # please enter the [ name ] or [ address ] of your project:\n>>> ')
+        name = input(' # please enter the [ name ] or [ address ] of your project:\n>>> ')
+        root_dir = name
 
         try:
-            file = open(".config")
+            file = open("../.config")
             file.close()
         except OSError as err:
             print("OS error: {0} - but we creat a default one".format(err))
-            file = open(".config", "w+")
+            file = open("../.config", "w+")
             file.write('Net Hub - version : ' + Info.version + '\n')
+            file.write('example=../example/\n')
             file.close()
 
-        file_conf = open(".config", "r")
+        file_conf = open("../.config", "r")
         _dir = file_conf.readlines()
         file_conf.close()
         _f = False
@@ -49,23 +54,28 @@ if __name__ == '__main__':
                     root_dir = _sp[1]
                     _f = True
 
-        if root_dir == 'root':
+        if name == 'root':
             file = open('script.sptnet', 'r')
 
         else:
 
             if _f:
                 root_dir = root_dir[:len(root_dir) - 1]
+
+            elif name == 'example':
+                root_dir[:len(root_dir) - 1]
+        
             else:
                 root_dir = root_dir[:len(root_dir)]
                 save_ = input('Do you want to save this path as a project directory? \'y\' or \'n\' : ')
                 if save_ == 'y' or save_ == 'yes':
                     name_ = input('Enter a name for this project : ')
-                    file_config = open(".config", "a")
+                    file_config = open("../.config", "a")
+                    root_dir = root_dir + '/'
                     file_config.write(name_ + '=' + root_dir + '\n')
                     file_config.close()
 
-            file = open(root_dir + '\\script.sptnet', 'r')
+            file = open(root_dir + 'script.sptnet', 'r')
 
         Lines = file.readlines()
         scripts = []
@@ -105,4 +115,6 @@ if __name__ == '__main__':
 
         main_dir = input('please enter the directory address contain \'my_model_weights.h5\' file:\n>>> ')
 
-        predict.prediction(main_dir)
+        prediction.predict(main_dir)
+
+
