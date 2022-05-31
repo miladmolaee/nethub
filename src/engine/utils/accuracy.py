@@ -16,12 +16,6 @@ def r_squared(y_true, y_pred):
     Returns:
         _description_
     """
-    print('type yt:', type(y_true), ', type yp:', type(y_pred))
-    print('-'*30)
-    print('yt:', y_true)
-    print('-'*30)
-    print('yp:', y_pred)
-    print('-'*30)
 
     SS_res = backend.sum(backend.square(y_true - y_pred))
     SS_tot = backend.sum(backend.square(y_true - backend.mean(y_true)))

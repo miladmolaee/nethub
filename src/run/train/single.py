@@ -74,7 +74,7 @@ class Single:
 
                     if not tex.check_result:
                         print('# Test Accuracy is not acceptable.')
-                        d = input('Dou you want to try again?   \'y\' or \'n\'\n')
+                        d = input("Dou you want to try again?   'y' or 'n'\n")
                         if not d == 'y':
                             break
                     else:

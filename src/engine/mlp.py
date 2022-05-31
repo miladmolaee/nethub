@@ -124,7 +124,6 @@ class MLP(Network):
             os.mkdir(os.path.join(parent_directory, 'result'))
         except OSError as error:
             pass
-            print(error)
 
         # set output directory
         parent_dir = self.parent_directory
@@ -140,7 +139,6 @@ class MLP(Network):
             os.mkdir(path)
         except OSError as error:
             pass
-            print(error)
 
         # set working directory
         self.working_directory = parent_dir + "result/Run No. " + str(self.run_num)
@@ -152,7 +150,6 @@ class MLP(Network):
             os.mkdir(project_path)
         except OSError as error:
             pass
-            print(error)
 
         self.project_path = self.working_directory + "/.project"
 
@@ -192,13 +189,11 @@ class MLP(Network):
             os.mkdir(os.path.join(self.working_directory, '.properties'))
         except OSError as error:
             pass
-            print(error)
 
         try:
             os.mkdir(os.path.join(self.working_directory, '.temp'))
         except OSError as error:
             pass
-            print(error)
 
         # write s and o ------------------------------------------------------------------------------------------------
         file = open(self.working_directory + '/.properties/input.properties', 'w')
@@ -464,7 +459,8 @@ class MLP(Network):
         try:
             os.mkdir(path)
         except OSError as error:
-            print(error)
+            pass
+
         working_dir = file_path + '/result from trained model'
 
         # --- prediction -----------------------------------------------------------------------------------------------
@@ -474,20 +470,6 @@ class MLP(Network):
         y_prediction = np.transpose(my_prediction).tolist()
 
         output = np.transpose(np.vstack((y_true, y_prediction)))
-
-        print('type yt:', type(y_true), ', type yp:', type(y_prediction))
-        print('-'*30)
-        print('yt:', y_true)
-        print('-'*30)
-        print('yp:', y_prediction)
-        print('-'*30)
-
-        print('type yt:', type(input_data), ', type yp:', type(my_prediction))
-        print('-'*30)
-        print('yt:', input_data)
-        print('-'*30)
-        print('yp:', my_prediction)
-        print('-'*30)
 
         loss = acc.mse(y_true, y_prediction)
         accuracy = acc.r_squared(y_true, y_prediction)

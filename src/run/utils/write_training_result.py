@@ -3,7 +3,7 @@ _line = '-' * 81
 
 
 def write_final_result(net, _print=True):
-    file = open(net.working_directory + '\\training_result.txt', 'w')
+    file = open(net.working_directory + '/training_result.text', 'w')
 
     file.write(line)
     file.write('|\t\t\t\tRESULT\t\t\t\t\t\t|\n')

@@ -67,7 +67,7 @@ if __name__ == '__main__':
         
             else:
                 root_dir = root_dir[:len(root_dir)]
-                save_ = input('Do you want to save this path as a project directory? \'y\' or \'n\' : ')
+                save_ = input("Do you want to save this path as a project directory? 'y' or 'n' : ")
                 if save_ == 'y' or save_ == 'yes':
                     name_ = input('Enter a name for this project : ')
                     file_config = open("../.config", "a")
@@ -113,7 +113,7 @@ if __name__ == '__main__':
 
     elif command == '3':  # prediction
 
-        main_dir = input('please enter the directory address contain \'my_model_weights.h5\' file:\n>>> ')
+        main_dir = input("please enter the directory address contain 'my_model_weights.h5' file:\n>>> ")
 
         prediction.predict(main_dir)
 

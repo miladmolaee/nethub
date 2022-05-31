@@ -40,16 +40,14 @@ class Normalizer:
             os.mkdir(os.path.join(self.root_path, '.properties'))
         except OSError as error:
             pass
-            # print(error)
 
         try:
             os.mkdir(os.path.join(self.root_path, '.temp'))
         except OSError as error:
             pass
-            # print(error)
 
         # write s and o ------------------------------------------------------------------------------------------------
-        file = open(self.root_path + '\\.properties\\input_for_prediction.properties', 'w')
+        file = open(self.root_path + '/.properties/input_for_prediction.properties', 'w')
         file.write('input dimension : [' + str(self.input_dim) + ']\n')
         file.write('output dimension : [' + str(self.output_dim) + ']\n')
         file.write('s : ')
@@ -60,7 +58,7 @@ class Normalizer:
         file.write('\n')
         file.close()
 
-        numpy.savetxt(self.root_path + '\\.temp\\normalized_data_for_prediction.dat', normalized_data,
+        numpy.savetxt(self.root_path + '/.temp/normalized_data_for_prediction.dat', normalized_data,
                       delimiter='\t', fmt='%1.9f')
 
         # return normalized data as a list -----------------------------------------------------------------------------

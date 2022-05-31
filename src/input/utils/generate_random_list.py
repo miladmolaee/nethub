@@ -4,7 +4,6 @@ from random import randrange
 def generateList(start, end, number):
 
     if number > end - start:
-        print("Error")
         return "Error"
 
     R = list(range(start, end))

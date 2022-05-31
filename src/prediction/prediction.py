@@ -16,7 +16,7 @@ def predict(path):
     _o = []
     _s = []
 
-    file = open(path + '\\.properties\\input.properties', 'r')
+    file = open(path + '/.properties/input.properties', 'r')
     Lines = file.readlines()
     newLines = []
 
@@ -89,7 +89,7 @@ def predict(path):
         for j in range(len(predicted[0, :])):
             predicted[i, j] = (predicted[i, j] - _o[int(input_dim) + j]) / _s[int(input_dim) + j]
 
-    numpy.savetxt(path + '\\prediction_output.txt', predicted, delimiter='\t', fmt='%1.9f')
+    numpy.savetxt(path + '/prediction_output.txt', predicted, delimiter='\t', fmt='%1.9f')
 
 
 

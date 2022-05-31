@@ -46,13 +46,11 @@ class Normalizer:
             os.mkdir(os.path.join(self.root_path, '.properties'))
         except OSError as error:
             pass
-            # print(error)
 
         try:
             os.mkdir(os.path.join(self.root_path, '.temp'))
         except OSError as error:
             pass
-            # print(error)
 
         # write s and o ------------------------------------------------------------------------------------------------
         file = open(self.root_path + '.properties/input.properties', 'w')
