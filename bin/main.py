@@ -15,7 +15,7 @@ if __name__ == '__main__':
     print('------------------------------------------------------------------')
     print('|                                                                |')
     print('|                # enter 1 for Training                          |')
-    print('|                # enter 2 for Test                              |')
+    print('|                # enter 2 for Validation                        |')
     print('|                # enter 3 for Prediction                        |')
     print('|                                                                |')
     print('------------------------------------------------------------------')
